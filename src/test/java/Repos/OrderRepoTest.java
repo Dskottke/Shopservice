@@ -35,6 +35,22 @@ class OrderRepoTest {
     }
 
     @Test
+    @DisplayName("addOrder should add an order into the orderList")
     void addOrder() {
+       //GIVEN
+        String testId = "1";
+        OrderRepo orderRepo = new OrderRepo();
+
+        List<Product> productList = new ArrayList<>(List.of(
+                        new Product(testId,"testProduct1")));
+
+        Order testOrder = new Order("1",productList);
+
+        //WHEN
+        orderRepo.addOrder(testOrder);
+        Order actual = orderRepo.getOrder(testId);
+        Order expected = testOrder;
+        //THEN
+        assertEquals(expected,actual);
     }
 }

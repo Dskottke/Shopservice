@@ -3,6 +3,7 @@ package Repos;
 import Model.Order;
 
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -14,7 +15,9 @@ public class OrderRepo {
         this.orders = orders;
     }
 
-
+    public OrderRepo() {
+        orders = new HashMap<>();
+    }
 
     public Order getOrder(String id) {
 
