@@ -18,15 +18,15 @@ class OrderRepoTest {
     @DisplayName("getOrder should return the Order by id ")
     void getOrderBy() {
         //GIVEN
-        List<Product> products = new ArrayList<>(
+        List<Product> productList = new ArrayList<>(
                 List.of(new Product("1","testProduct1"),
                         new Product("2","testProduct2")));
 
-        Order testOrder = new Order("1",products);
+        Order testOrder = new Order("1",productList);
 
-        Map<String,Order> testOrders = new HashMap<>(Map.of(testOrder.getId(),testOrder));
+        Map<String,Order> ordersMap = new HashMap<>(Map.of(testOrder.getId(),testOrder));
 
-        OrderRepo testOrderRepo = new OrderRepo(testOrders);
+        OrderRepo testOrderRepo = new OrderRepo(ordersMap);
         //WHEN
         Order actual = testOrderRepo.getOrder("1");
         Order expected =testOrder;
