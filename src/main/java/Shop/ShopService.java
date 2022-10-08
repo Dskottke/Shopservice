@@ -1,5 +1,6 @@
 package Shop;
 
-public class ShopService {
+import Repos.ProductRepo;
 
+public class ShopService {
 }
