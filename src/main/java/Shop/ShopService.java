@@ -4,6 +4,7 @@ import Model.Product;
 import Repos.OrderRepo;
 import Repos.ProductRepo;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ShopService {
@@ -16,6 +17,7 @@ public class ShopService {
     }
     public Product getProduct(String id){
        Optional<Product> chooseableProduct = productRepo.getProduct(id);
+
        if(chooseableProduct.isPresent()){
            return chooseableProduct.get();
        }
@@ -23,5 +25,6 @@ public class ShopService {
            throw new NoProductFoundException();
        }
     }
+
 
 }

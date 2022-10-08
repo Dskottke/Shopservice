@@ -16,7 +16,7 @@ class OrderRepoTest {
 
     @Test
     @DisplayName("getOrder should return the Order by id ")
-    void getOrderBy() {
+    void getOrderByid() {
         //GIVEN
         List<Product> productList = new ArrayList<>(
                 List.of(new Product("1","testProduct1"),
