@@ -15,7 +15,7 @@ class ProductRepoTest {
 
     @Test
     @DisplayName("getProduct should return matching product by ID ")
-    public void getProductById(){
+    void getProductById(){
         //GIVEN
         List<Product> products = new ArrayList<>(List.of(
                 new Product("1","apfel"),
@@ -31,7 +31,7 @@ class ProductRepoTest {
     }
     @Test
     @DisplayName("return Optional.empty by finding no match by id")
-    public void getProductByIdFailToFindId()
+   void getProductByIdFailToFindId()
     {
         //GIVEN
         List<Product> products = new ArrayList<>(List.of(

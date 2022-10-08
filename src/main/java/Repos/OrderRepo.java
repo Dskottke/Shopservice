@@ -16,7 +16,7 @@ public class OrderRepo {
 
 
 
-    public Order getOrders(String id) {
+    public Order getOrder(String id) {
 
         for (Map.Entry<String, Order> iterator : orders.entrySet()) {
             if (iterator.getKey().equals(id)) {
