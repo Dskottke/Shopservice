@@ -2,6 +2,8 @@ package Repos;
 
 import Model.Product;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +14,10 @@ public class ProductRepo {
     public ProductRepo(List<Product> productList) {
 
         this.products = productList;
+    }
+
+    public ProductRepo() {
+        this.products = Collections.unmodifiableList(products);
     }
 
     public List<Product> listProducts() {
@@ -28,6 +34,7 @@ public class ProductRepo {
                 }
             }
         }
-    return Optional.empty();
+        return Optional.empty();
     }
+
 }

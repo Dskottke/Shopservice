@@ -52,12 +52,9 @@ class ShopServiceTest {
                new Product("3","Testproduct3"))
         );
 
-
         OrderRepo testOrderRepo = new OrderRepo();
         ProductRepo testProductRepo = new ProductRepo(productsToOrder);
         ShopService testShopService = new ShopService(testOrderRepo,testProductRepo);
-
-
 
         //WHEN
         List<String> productKeysForOrder = new ArrayList<>(List.of("1","2"));
@@ -69,7 +66,38 @@ class ShopServiceTest {
         ));
         //THEN
         assertEquals(expected.listProducts(),actual.listProducts());
+        }
+
+    @Test
+    @DisplayName("Should throw an noProductsFoundException")
+    void orderProductsByFalseKey(){
+        //GIVEN
+        List<Product> productsToOrder = new ArrayList<>(List.of(
+                new Product("1","Testproduct1"),
+                new Product("2","Testproduct2"),
+                new Product("3","Testproduct3"))
+        );
+
+        OrderRepo testOrderRepo = new OrderRepo();
+        ProductRepo testProductRepo = new ProductRepo(productsToOrder);
+        ShopService testShopService = new ShopService(testOrderRepo,testProductRepo);
+
+
+        //WHEN
+        List<String> productKeysForOrder = new ArrayList<>(List.of("1","4"));
+        try{
+        testShopService.orderProducts(productKeysForOrder);
+            fail();
+        }
+        //THEN
+        catch (NoProductFoundException e){
+            assertEquals("found no product with this id ",e.getMessage());
+
+        }
+
 
     }
+
+
     }
 
