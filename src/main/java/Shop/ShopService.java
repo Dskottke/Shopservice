@@ -1,11 +1,14 @@
 package Shop;
 
+import Model.Order;
 import Model.Product;
 import Repos.OrderRepo;
 import Repos.ProductRepo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public class ShopService {
     private final OrderRepo orderRepo;
@@ -30,9 +33,21 @@ public class ShopService {
         return productRepo.listProducts();
     }
 
+    public Order orderProducts(List<String> productKeys) {
 
+        List<Product> productsToOrder = new ArrayList<>();
 
+        for (String key : productKeys) {
 
+            Product product = getProduct(key);
+            productsToOrder.add(product);
+
+        }
+
+        String id = UUID.randomUUID().toString();
+
+        return orderRepo.addOrder(new Order(id, productsToOrder));
+    }
 
 
 }

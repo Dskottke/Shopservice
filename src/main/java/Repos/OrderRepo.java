@@ -4,6 +4,7 @@ import Model.Order;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -29,8 +30,12 @@ public class OrderRepo {
         throw new IllegalArgumentException("no match with id");
     }
 
-    public void addOrder(Order order){
+    public Order addOrder(Order order){
         orders.put(order.getId(),order);
+        return order;
     }
+
+
+
 
 }

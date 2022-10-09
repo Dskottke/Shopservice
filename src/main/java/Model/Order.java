@@ -30,4 +30,9 @@ public class Order {
     public int hashCode() {
         return Objects.hash(id, products);
     }
+
+    public List<Product> listProducts() {
+        return products;
+    }
+
 }
