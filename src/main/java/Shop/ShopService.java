@@ -8,23 +8,31 @@ import java.util.List;
 import java.util.Optional;
 
 public class ShopService {
-   private final OrderRepo orderRepo;
-   private final ProductRepo productRepo;
+    private final OrderRepo orderRepo;
+    private final ProductRepo productRepo;
 
     public ShopService(OrderRepo orderRepo, ProductRepo productRepo) {
         this.orderRepo = orderRepo;
         this.productRepo = productRepo;
     }
-    public Product getProduct(String id){
-       Optional<Product> chooseableProduct = productRepo.getProduct(id);
 
-       if(chooseableProduct.isPresent()){
-           return chooseableProduct.get();
-       }
-       else{
-           throw new NoProductFoundException();
-       }
+    public Product getProduct(String id) {
+        Optional<Product> product = productRepo.getProduct(id);
+
+        if (product.isPresent()) {
+            return product.get();
+        } else {
+            throw new NoProductFoundException();
+        }
     }
+
+    public List<Product> listProduct() {
+        return productRepo.listProducts();
+    }
+
+
+
+
 
 
 }

@@ -20,6 +20,7 @@ class ShopServiceTest {
     @DisplayName("shopservice getProduct should match with productRepo getProduct")
     void getProductbyId(){
         //GIVEN
+
         List<Product> productList = new ArrayList<>(
                 List.of(new Product("1","testProduct1"),
                         new Product("2","testProduct2")));
