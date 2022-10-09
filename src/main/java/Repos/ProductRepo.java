@@ -9,17 +9,19 @@ import java.util.Optional;
 
 public class ProductRepo {
 
+    //DECLARATION
     private List<Product> products;
 
+    //CONSTRUCTOR
     public ProductRepo(List<Product> productList) {
 
         this.products = productList;
     }
-
     public ProductRepo() {
         this.products = Collections.unmodifiableList(products);
     }
 
+    //METHODS
     public List<Product> listProducts() {
         return products;
     }

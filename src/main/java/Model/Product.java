@@ -5,9 +5,11 @@ import lombok.Data;
 import java.util.Objects;
 @Data
 public class Product {
+    //DECLARATION
     private String id;
     private String name;
 
+    //CONSTRUCTOR
     public Product() {
     }
 
@@ -16,6 +18,7 @@ public class Product {
         this.name = name;
     }
 
+    //METHODS
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

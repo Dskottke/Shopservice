@@ -11,14 +11,16 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class ShopService {
+    //DECLARATION
     private final OrderRepo orderRepo;
     private final ProductRepo productRepo;
 
+    //CONSTRUCTOR
     public ShopService(OrderRepo orderRepo, ProductRepo productRepo) {
         this.orderRepo = orderRepo;
         this.productRepo = productRepo;
     }
-
+    //METHODS
     public Product getProduct(String id) {
         Optional<Product> product = productRepo.getProduct(id);
 
@@ -48,8 +50,6 @@ public class ShopService {
 
         return orderRepo.addOrder(new Order(id, productsToOrder));
     }
-
-
 
 
 }

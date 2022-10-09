@@ -17,7 +17,8 @@ public class Main {
                 ShopService shopService = new ShopService(orderRepo,productRepo);
 
 
-        System.out.println(shopService.listProduct());
+
+        System.out.println(orderRepo.listOrder());
 
 
     }

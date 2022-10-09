@@ -6,13 +6,16 @@ import java.util.List;
 import java.util.Objects;
 @Data
 public class Order {
+
+    //DECLARATION
     private String id;
     private List<Product> products;
 
-
+    //CONSTRUCTOR
     public Order() {
     }
 
+    //METHODS
     public Order(String id, List<Product> products) {
         this.id = id;
         this.products = products;
