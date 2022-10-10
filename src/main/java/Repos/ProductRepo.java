@@ -18,7 +18,7 @@ public class ProductRepo {
         this.products = productList;
     }
     public ProductRepo() {
-        this.products = Collections.unmodifiableList(products);
+        this.products = products;
     }
 
     //METHODS

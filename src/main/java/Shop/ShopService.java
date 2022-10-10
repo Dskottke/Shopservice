@@ -20,15 +20,15 @@ public class ShopService {
         this.orderRepo = orderRepo;
         this.productRepo = productRepo;
     }
+
     //METHODS
     public Product getProduct(String id) {
         Optional<Product> product = productRepo.getProduct(id);
 
         if (product.isPresent()) {
             return product.get();
-        } else {
-            throw new NoProductFoundException();
         }
+        else throw new NoProductFoundException();
     }
 
     public List<Product> listProduct() {
